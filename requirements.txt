@@ -1,6 +1,6 @@
-numpy
-pandas
-matplotlib
-requests
-jupyter
-nbformat
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+requests>=2.31.0
+jupyter>=1.0.0
+nbformat>=5.9.0

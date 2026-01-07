@@ -63,6 +63,9 @@ def bs_price(S: float, K: float, r: float, q: float, sigma: float, T: float, opt
 
 def bs_greeks(S: float, K: float, r: float, q: float, sigma: float, T: float, opt: OptionType):
     """Return greeks: delta, gamma, theta, vega, rho."""
+    if T <= 0 or sigma <= 0 or S <= 0 or K <= 0:
+        return {"delta": 0.0, "gamma": 0.0, "theta": 0.0, "vega": 0.0, "rho": 0.0}
+    
     d1, d2 = bs_d1_d2(S, K, r, q, sigma, T)
     pdf_d1 = std_norm_pdf(d1)
     disc_r = math.exp(-r * T)
